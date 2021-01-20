@@ -1,51 +1,35 @@
 <!DOCTYPE HTML5>
 <html>
-    <script>
-        function computerPlay(){
-            let moves = ["rock","paper","scissors"];
-            let index = Math.floor(Math.random()*3);
-            return moves[index];
-        }
-        
-        function play(playerMove,computerMove){
-            playerMove = playerMove.toLowerCase();
-            if(playerMove == computerMove){
-                return("Its a tie!");
-            }else if(playerMove == "rock" && computerMove == "paper" || playerMove == "scissors" && computerMove == "rock" || playerMove == "paper" && computerMove == "scissors"){
-               if(playerMove=="rock")return("You lose!Paper beats rock");
-               if(playerMove=="paper")return("You lose!Scissors beats paper");
-               if(playerMove=="scissors")return("You lose!Rock beats scissors");
-
-            }
-            else{
-                if(playerMove=="rock")return("You Win!rock beats scissors");
-               if(playerMove=="paper")return("You Win!paper beats rock");
-               if(playerMove=="scissors")return("You Win!scissors beats paper");
-            }
-        }
-       function game(){
-           let playerScore = computerScore = 0;
-           for(let i=0;i<5;i++){
-               let playerMove = prompt("Enter your Move");
-               let computerMove = computerPlay();
-               playerMove = playerMove.toLowerCase();
-               console.log("Player move:"+playerMove);
-               console.log("Compter Move:"+computerMove);
-               let res = play(playerMove,computerMove);
-               console.log(res);
-               if(res.search("Win")!=-1){
-                   playerScore++;
-               }if(res.search("lose")!=-1){
-                   computerScore++;
-               }
-           }
-           if(playerScore>computerScore){
-               console.log(`You Won! player score: ${playerScore} and computerScore:${computerScore}`);
-           }
-           else{
-               console.log(`You lost! player score: ${playerScore} and computerScore:${computerScore}`);
-           }
-       }
-       game();
-    </script>
+   <head>
+       <title>Rock Paper Scissors</title>
+       <link  rel="stylesheet" href="styles.css">
+       <link rel="preconnect" href="https://fonts.gstatic.com">
+       <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Poppins:wght@300&display=swap" rel="stylesheet"> 
+   </head>
+   <body>
+       <div id="score">
+          <p class="score-card"></p>
+       </div>
+       <div id="container">
+         <div id="player-div">
+             <h1>Player</h1>
+             <div class="img-container hover-div">
+             <div data-choice="rock" class = "img player"><img src="images/empowerment.svg"></div>
+             <div data-choice="paper" class = "img player"><img src="images/finger-up.svg"></div>
+             <div data-choice="scissors" class = "img player"><img src="images/peace.svg"></div>
+            </div>
+         </div>     
+         <div id="middle"></div>    
+         <div id="cpu-div">
+            <h1>Non-player</h1>
+            <div class="img-container">
+                <div data-cpu="rock" class = "img cpu"><img src="images/empowerment.svg"></div>
+                <div data-cpu="paper" class = "img cpu"><img src="images/finger-up.svg"></div>
+                <div data-cpu="scissors" class = "img cpu"><img src="images/peace.svg"></div>
+               </div>
+           
+         </div>
+       </div>
+   <script src="app.js"></script>
+   </body>
 </html>

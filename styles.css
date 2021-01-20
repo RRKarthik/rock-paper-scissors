@@ -1,0 +1,79 @@
+*{
+    margin:0px;
+    padding:0px;
+
+}
+html,body{
+    height:100%;
+   
+}
+img{
+    height:100px;
+    width: 100px;
+}
+
+
+body{
+    background: linear-gradient( #BDF1F6,#FFFFFF);
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+}
+#container{
+    display: flex;
+    flex-direction: row;
+}
+.img{
+    
+    margin:0 30px;
+    background-color: white;
+    height:150px;
+    width:150px;
+    box-shadow: 5px 8px 8px black;
+    float:left;
+    padding-top:20px;
+    box-sizing: border-box;
+}
+#middle{
+    width:100px;
+    box-sizing:border-box;
+}
+#player-div,#cpu-div,#middle{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hover-div>.img:hover{
+    transform:scale(1.05);
+    border-color:black;
+    border-style: dashed;
+    
+}
+.hovering{
+    transform:scale(1.05);
+    border-color:black;
+    border-style: dashed;
+    
+}
+#player-div>h1,#cpu-div>h1{
+   position: relative;
+   bottom:30px;
+    font-family: 'Gochi Hand', cursive;
+    font-size:60px;
+}
+#score{
+    position: absolute;
+    top:30px;
+
+}
+#score>p{
+    font-size: 100px;
+    font-family: 'Gochi Hand', cursive;
+}
+.winner{
+    transform:scale(1.1);
+    
+}
+
