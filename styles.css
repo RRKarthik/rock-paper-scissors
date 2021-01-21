@@ -72,8 +72,12 @@ body{
     font-size: 100px;
     font-family: 'Gochi Hand', cursive;
 }
-.winner{
-    transform:scale(1.1);
-    
-}
 
+#container{
+    margin-bottom: 100px;
+}
+#announcer-para{
+    font-family: 'Gochi Hand',cursive;
+    font-size:40px;
+    letter-spacing: 3px;
+}
